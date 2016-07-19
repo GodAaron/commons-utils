@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+    <bean id="insertAspect" class="com.wf2311.commons.persist.interceptor.InsertInterceptor"/>
+    <!-- AOP配置 -->
+    <aop:config>
+        <!-- 声明一个切面,并注入切面Bean,相当于@Aspect -->
+        <aop:aspect id="insAspect" ref="insertAspect">
+            <!-- 配置一个切入点,相当于@Pointcut -->
+            <aop:pointcut expression="execution(* com.wf2311.commons..insert*(..)) || execution(* com.wf2311.commons..save*(..))"
+                          id="insertAspectPointcut"/>
+            <!-- 配置通知,相当于@Before、@After、@AfterReturn、@Around、@AfterThrowing -->
+            <aop:before pointcut-ref="insertAspectPointcut" method="before"/>
+        </aop:aspect>
+    </aop:config>
+
+    <bean id="updateAspect" class="com.wf2311.commons.persist.interceptor.UpdateInterceptor"/>
+    <!-- AOP配置 -->
+    <aop:config>
+        <!-- 声明一个切面,并注入切面Bean,相当于@Aspect -->
+        <aop:aspect id="updAspect" ref="updateAspect">
+            <!-- 配置一个切入点,相当于@Pointcut -->
+            <aop:pointcut expression="execution(* com.wf2311.commons..update*(..))"
+                          id="updateAspectPointcut"/>
+            <!-- 配置通知,相当于@Before、@After、@AfterReturn、@Around、@AfterThrowing -->
+            <aop:before pointcut-ref="updateAspectPointcut" method="before"/>
+        </aop:aspect>
+    </aop:config>
+</beans>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>wf2311</artifactId>
+        <groupId>com.wf2311</groupId>
+        <version>1.2.0</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.wf2311</groupId>
+    <artifactId>wf2311-commons</artifactId>
+    <packaging>pom</packaging>
+    <version>1.2.0</version>
+    <modules>
+        <module>commons-lang</module>
+        <module>commons-persist</module>
+        <module>commons-search</module>
+        <module>commons-fileupload</module>
+    </modules>
+
+
+</project>
