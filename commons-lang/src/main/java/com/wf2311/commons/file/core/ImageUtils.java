@@ -1,10 +1,9 @@
 package com.wf2311.commons.file.core;
 
 import com.mortennobel.imagescaling.ResampleOp;
-import com.sun.image.codec.jpeg.JPEGCodec;
-import com.sun.image.codec.jpeg.JPEGImageEncoder;
+//import com.sun.image.codec.jpeg.JPEGCodec;
+//import com.sun.image.codec.jpeg.JPEGImageEncoder;
 import org.apache.log4j.Logger;
-import org.apache.velocity.texen.util.FileUtil;
 import org.jsoup.helper.StringUtil;
 
 import javax.imageio.ImageIO;
@@ -810,6 +809,7 @@ public class ImageUtils {
      * @param fix  要转换成的文件格式,文件名后缀
      */
     @SuppressWarnings("restriction")
+    @Deprecated
     public static void formatImage(String path, String fix) {
         String _path = path;
         try {
@@ -819,8 +819,8 @@ public class ImageUtils {
             BufferedImage tag = new BufferedImage(image.getWidth(), image.getHeight(), BufferedImage.TYPE_INT_RGB);
             tag.getGraphics().drawImage(image, 0, 0, image.getWidth(), image.getHeight(), null); // 绘制缩小后的图
             FileOutputStream newimage = new FileOutputStream(path.substring(0, path.lastIndexOf(".")) + fix); // 输出到文件流
-            JPEGImageEncoder encoder = JPEGCodec.createJPEGEncoder(newimage);
-            encoder.encode(tag);
+//            JPEGImageEncoder encoder = JPEGCodec.createJPEGEncoder(newimage);
+//            encoder.encode(tag);
             newimage.close();
         } catch (Exception ex) {
             logger.equals(ex);

@@ -13,6 +13,10 @@
     <artifactId>commons-persist</artifactId>
     <version>0.0.1</version>
     <packaging>jar</packaging>
+
+    <name>${project.groupId}:${project.artifactId}</name>
+    <description>commons-persist</description>
+
     <dependencies>
         <dependency>
             <groupId>com.wf2311.commons</groupId>

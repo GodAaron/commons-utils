@@ -13,6 +13,10 @@
     <artifactId>commons-lang</artifactId>
     <version>0.0.1</version>
     <packaging>jar</packaging>
+
+    <name>${project.groupId}:${project.artifactId}</name>
+    <description>commons-lang</description>
+
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
