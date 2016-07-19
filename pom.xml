@@ -17,7 +17,6 @@
         <module>commons-lang</module>
         <module>commons-persist</module>
         <module>commons-search</module>
-        <module>commons-fileupload</module>
     </modules>
 
 
